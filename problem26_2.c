@@ -1,0 +1,44 @@
+// Problem Statement :- WAP which accepts string from user and convert it into upper case.
+
+#include<stdio.h>
+
+void StringUpper(char *str)
+{
+    char cCnt1 = '\0';
+    char cCnt2 = '\0';
+    int iCnt = 1,i = 1;
+
+    while(*str != '\0')
+    {
+        if((*str >= 'a') && (*str <= 'z'))
+        {
+            cCnt1 = 'a';
+            while(cCnt1 != *str)
+            {
+                cCnt1 ++;
+                iCnt ++;
+            }
+            cCnt2 = 'A';
+            while(i != iCnt)
+            {
+                i++;
+                cCnt2 ++;
+            }
+            *str = cCnt2;
+        }
+        printf("%c",*str);
+        str ++;
+    }
+}
+
+
+int main()
+{
+    char Arr[20];
+
+    printf("Enter String : \n");
+    scanf("%[^'\n']s",Arr);
+
+    StringUpper(Arr);
+    return 0;
+}
